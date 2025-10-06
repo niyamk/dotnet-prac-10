@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "IMemoryCache Demo";
+}
+
+<div class="text-center">
+    <h1>Data Caching with IMemoryCache</h1>
+    <p class="lead">This page caches a specific piece of data (a timestamp) for 20 seconds.</p>
+    <p>Refresh this page to see the "Current Server Time" update on every request, while the "Cached Time" stays the same until its 20-second cache expires.</p>
+
+    <div class="row mt-4 justify-content-center">
+        <div class="col-md-5">
+            <div class="alert alert-success">
+                <h4>Cached Time: @ViewBag.CachedTimestamp</h4>
+                <small>(Updates only after 20 seconds)</small>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="alert alert-warning">
+                <h4>Current Server Time: @ViewBag.CurrentTimestamp</h4>
+                <small>(Updates on every refresh)</small>
+            </div>
+        </div>
+    </div>
+    
+    <a asp-action="Index" class="btn btn-secondary mt-3">Back to Home</a>
+</div>
